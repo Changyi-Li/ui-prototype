@@ -19,8 +19,11 @@ import {
 //   PanelLeftOpenIcon on hover. No badge, no team switcher.
 
 export function BrandHeader() {
-  const { state, toggleSidebar } = useSidebar()
-  const collapsed = state === "collapsed"
+  const { state, isMobile, toggleSidebar } = useSidebar()
+  // On mobile the sidebar is a full-width sheet; the desktop collapsed state
+  // doesn't apply there, so always show the expanded header (its toggle closes
+  // the sheet, per design decision Q4).
+  const collapsed = state === "collapsed" && !isMobile
 
   if (collapsed) {
     return (
