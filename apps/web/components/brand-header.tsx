@@ -14,7 +14,7 @@ import {
 // Sidebar brand header — validated design (prototype verdict):
 // - bar look: border-b border-sidebar-border
 // - h-14 header, matched h-14 page bar in app-shell
-// - logo-sm + "Monitor ERP" wordmark in brand blue #0089CF, links to "/"
+// - logo-sm + "Monitor ERP" wordmark in brand blue (--brand / text-brand), links to "/"
 // - toggle inside the header (PanelLeftCloseIcon); collapsed: logo swaps to
 //   PanelLeftOpenIcon on hover. No badge, no team switcher.
 
@@ -57,7 +57,7 @@ export function BrandHeader() {
         className="flex min-w-0 items-center gap-2 rounded-md px-1.5 py-1 transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
       >
         <img src="/logo-sm.png" alt="" className="size-6 shrink-0" />
-        <span className="truncate text-sm font-semibold text-[#0089CF]">
+        <span className="truncate text-sm font-semibold text-brand">
           Monitor ERP
         </span>
       </Link>

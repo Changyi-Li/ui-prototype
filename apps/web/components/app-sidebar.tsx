@@ -5,7 +5,7 @@ import * as React from "react"
 import { NavMain } from "@/components/nav-main"
 import { NavProjects } from "@/components/nav-projects"
 import { NavUser } from "@/components/nav-user"
-import { BrandHeader } from "@/components/sidebar-header"
+import { BrandHeader } from "@/components/brand-header"
 import {
   Sidebar,
   SidebarContent,
