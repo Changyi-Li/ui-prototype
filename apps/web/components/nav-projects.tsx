@@ -29,14 +29,23 @@ export function NavProjects({
     icon: React.ReactNode
   }[]
 }) {
-  const { isMobile } = useSidebar()
+  // setOpenMobile: close the mobile sheet on navigation (client-side nav
+  // doesn't reload the page, so the sheet would otherwise stay open).
+  const { isMobile, setOpenMobile } = useSidebar()
   return (
     <SidebarGroup className="group-data-[collapsible=icon]:hidden">
       <SidebarGroupLabel>Projects</SidebarGroupLabel>
       <SidebarMenu>
         {projects.map((item) => (
           <SidebarMenuItem key={item.name}>
-            <SidebarMenuButton render={<Link href={item.url} />}>
+            <SidebarMenuButton
+              render={
+                <Link
+                  href={item.url}
+                  onClick={() => setOpenMobile(false)}
+                />
+              }
+            >
               {item.icon}
               <span>{item.name}</span>
             </SidebarMenuButton>

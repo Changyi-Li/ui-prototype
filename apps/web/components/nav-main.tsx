@@ -16,6 +16,7 @@ import {
   SidebarMenuSub,
   SidebarMenuSubButton,
   SidebarMenuSubItem,
+  useSidebar,
 } from "@/components/ui/sidebar"
 import { ChevronRightIcon } from "lucide-react"
 
@@ -33,6 +34,9 @@ export function NavMain({
     }[]
   }[]
 }) {
+  // Close the mobile sheet on navigation (client-side nav doesn't reload the
+  // page, so the sheet would otherwise stay open).
+  const { setOpenMobile } = useSidebar()
   return (
     <SidebarGroup>
       <SidebarGroupLabel>Platform</SidebarGroupLabel>
@@ -55,7 +59,14 @@ export function NavMain({
               <SidebarMenuSub>
                 {item.items?.map((subItem) => (
                   <SidebarMenuSubItem key={subItem.title}>
-                    <SidebarMenuSubButton render={<Link href={subItem.url} />}>
+                    <SidebarMenuSubButton
+                      render={
+                        <Link
+                          href={subItem.url}
+                          onClick={() => setOpenMobile(false)}
+                        />
+                      }
+                    >
                       <span>{subItem.title}</span>
                     </SidebarMenuSubButton>
                   </SidebarMenuSubItem>
