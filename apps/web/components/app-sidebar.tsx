@@ -17,9 +17,9 @@ import { TerminalSquareIcon, BotIcon, BookOpenIcon, Settings2Icon, FrameIcon, Pi
 // This is sample data.
 const data = {
   user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
+    name: "admin",
+    email: "admin@example.com",
+    avatar: "/avatars/admin.jpg",
   },
   navMain: [
     {
