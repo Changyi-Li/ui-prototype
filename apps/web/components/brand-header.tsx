@@ -58,7 +58,7 @@ export function BrandHeader() {
         href="/"
         aria-label="Monitor ERP — go to dashboard"
         onClick={() => setOpenMobile(false)}
-        className="flex min-w-0 items-center gap-2 rounded-md px-1.5 py-1 transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
+        className="flex min-w-0 flex-1 items-center gap-2 rounded-md px-1.5 py-1 transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
       >
         <img src="/logo-sm.png" alt="" className="size-6 shrink-0" />
         <span className="truncate text-sm font-semibold text-brand">
