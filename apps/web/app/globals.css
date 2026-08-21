@@ -201,3 +201,16 @@
     @apply font-sans;
   }
 }
+
+/* Fullscreen mode: the use-fullscreen hook sets data-fullscreen on <html>.
+   Root-anchored so it also reaches the mobile sidebar sheet (portaled to
+   <body>); !important overrides the sidebar wrapper's inline width vars. */
+html[data-fullscreen] [data-slot="sidebar-wrapper"] {
+  --sidebar-width: 0px !important;
+  --sidebar-width-icon: 0px !important;
+}
+html[data-fullscreen] [data-slot="sidebar"] {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease;
+}
